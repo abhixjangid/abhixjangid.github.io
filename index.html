@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuromancer</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', sans-serif;
+            background-color: #282c34;
+            color: #61dafb;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #20232a;
+            padding: 1em;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #61dafb;
+            padding: 1em;
+        }
+        nav a {
+            color: #20232a;
+            text-decoration: none;
+            margin: 0 1em;
+            font-size: 1.5em;
+        }
+        nav a:hover {
+            color: #ff8c00;
+        }
+        section {
+            padding: 2em;
+            text-align: center;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .funny-graphic {
+            max-width: 100%;
+            height: auto;
+            border: 5px solid #ff8c00;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ff8c00;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Neuromancer</h1>
+    </header>
+    <nav>
+        <a href="#" data-tab="home">Home</a>
+        <a href="#" data-tab="about">About</a>
+        <a href="#" data-tab="gallery">Gallery</a>
+        <a href="#" data-tab="contact">Contact</a>
+    </nav>
+    <section>
+        <div id="home" class="tab-content active">
+            <h2>Welcome to Neuromancer!</h2>
+            <p>Prepare to laugh your neurons off!</p>
+            <img src="https://media.giphy.com/media/26Ff2XxTXmpmLGEIg/giphy.gif" alt="Funny GIF" class="funny-graphic">
+        </div>
+        <div id="about" class="tab-content">
+            <h2>About Us</h2>
+            <p>We are here to tickle your brain cells with humor and wit!</p>
+            <img src="https://media.giphy.com/media/3o7TKU8RvQuomFfUUU/giphy.gif" alt="Funny About Us" class="funny-graphic">
+        </div>
+        <div id="gallery" class="tab-content">
+            <h2>Gallery</h2>
+            <p>Feast your eyes on our hilarious collection!</p>
+            <img src="https://media.giphy.com/media/l0HlRmL3L1OtKoGe4/giphy.gif" alt="Funny Gallery" class="funny-graphic">
+        </div>
+        <div id="contact" class="tab-content">
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you! Reach out with your funniest thoughts.</p>
+            <img src="https://media.giphy.com/media/l3vR2MmOggCQ4YOhW/giphy.gif" alt="Funny Contact" class="funny-graphic">
+        </div>
+    </section>
+    <script>
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.getElementById(link.getAttribute('data-tab')).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
