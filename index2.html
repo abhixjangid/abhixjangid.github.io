@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhishek's GitHub Profile</title>
+  <style>
+    /* Global styles */
+    body {
+      background-color: #222;
+      color: #ddd;
+      font-family: 'Fira Mono', monospace;
+      margin: 0;
+      padding: 0;
+    }
+    a {
+      color: #888;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #fff;
+    }
+    h1, h2 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    p {
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    /* Header styles */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #333;
+    }
+    .heading {
+      display: flex;
+      align-items: center;
+    }
+    .animated-text {
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      height: 40px; /* Adjust the height as needed */
+    }
+    .animated-text img {
+      height: 100%;
+      position: absolute;
+      animation: blink 0.7s step-end infinite;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .nav {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .nav li {
+      display: inline-block;
+      margin-right: 1rem;
+    }
+    /* Main content styles */
+    .about, .projects, .contact {
+      margin-bottom: 3rem;
+    }
+    .project-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap">
+</head>
+<body>
+  <header class="header">
+    <h1 class="heading">
+      <span></span>
+      <span></span>
+      <span class="animated-text" id="animatedText">
+        <img src="image1.jpg" alt="Image 1">
+      </span>
+    </h1>
+    <nav class="nav">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="about" id="about">
+      <h2>About Me</h2>
+      <p>I am a neuroscience and technology enthusiast trying to live in a retro anime environment 
+        where I can build cool things and experiments using my skills</p>
+      <a href="https://[your portfolio link]" class="portfolio-link">Portfolio</a>
+    </section>
+    <section class="projects" id="projects">
+      <h2>Projects</h2>
+      <ul class="project-list">
+        <li>
+          <h3>Project Name</h3>
+          <p>[Project description]</p>
+          <a href="https://[project link]">View Project</a>
+        </li>
+      </ul>
+    </section>
+    <section class="contact" id="contact">
+      <h2>Contact</h2>
+      <p>[Provide preferred contact methods: email, social media links, etc.]</p>
+      <p>Email: abhixjangid@gmail.com</p>
+      <p>Twitter: <a href="https://x.com/the_firetorch">https://x.com/the_firetorch</a></p>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Abhishek</p>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    const images = [
+      'image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg', 'image5.jpg',
+      'image6.jpg', 'image7.jpg', 'image8.jpg', 'image9.jpg', 'image10.jpg'
+    ];
+    let currentIndex = 0;
+    const animatedText = document.getElementById('animatedText');
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      animatedText.innerHTML = `<img src="${images[currentIndex]}" alt="Image ${currentIndex + 1}">`;
+    }, 700); // Change interval to match the blink animation
+  </script>
+</body>
+</html>
