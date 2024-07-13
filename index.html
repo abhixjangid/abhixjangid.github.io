@@ -1,74 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neuromancer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
-    <style>
-        @keyframes neon-glow {
-            0%, 100% {
-                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0099, 0 0 30px #ff0099, 0 0 40px #ff0099, 0 0 50px #ff0099, 0 0 60px #ff0099, 0 0 70px #ff0099;
-            }
-            50% {
-                text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #ff0099, 0 0 15px #ff0099, 0 0 20px #ff0099, 0 0 25px #ff0099, 0 0 30px #ff0099, 0 0 35px #ff0099;
-            }
-        }
-        header h1 {
-            font-family: 'Roboto Mono', monospace;
-            color: #fff;
-            font-size: 4em;
-            animation: neon-glow 1.5s infinite alternate;
-        }
-        body {
-            background-color: #000;
-            color: #61dafb;
-            text-align: center;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Your Name]'s GitHub Profile</title>
+  <style>
+    /* Global styles */
+    body {
+      background-color: #222;
+      color: #ddd;
+      font-family: 'Fira Mono', monospace;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      color: #888;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #fff;
+    }
+
+    h1, h2 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Header styles */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #333;
+    }
+
+    .heading {
+      display: flex;
+      align-items: center;
+    }
+
+    .animated-text {
+      animation: typing 3.5s steps(40, end) infinite, blink 0.7s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      from, to { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .nav {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav li {
+      display: inline-block;
+      margin-right: 1rem;
+    }
+
+    /* Main content styles */
+    .about, .projects, .contact {
+      margin-bottom: 3rem;
+    }
+
+    .project-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap">
 </head>
 <body>
-    <header>
-        <h1>Neuromancer</h1>
-    </header>
-    <nav>
-        <a href="#" data-tab="home">Home</a>
-        <a href="#" data-tab="about">About</a>
-        <a href="#" data-tab="gallery">Gallery</a>
-        <a href="#" data-tab="contact">Contact</a>
+  <header class="header">
+    <h1 class="heading">
+      <span>[Your Name]</span>
+      <span class="animated-text"> // Developer</span>
+    </h1>
+    <nav class="nav">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
-    <section>
-        <div id="home" class="tab-content active">
-            <h2>Welcome to Neuromancer!</h2>
-            <p>Prepare to laugh your neurons off!</p>
-            <img src="https://media.giphy.com/media/26Ff2XxTXmpmLGEIg/giphy.gif" alt="Funny GIF" class="funny-graphic">
-        </div>
-        <div id="about" class="tab-content">
-            <h2>About Us</h2>
-            <p>We are here to tickle your brain cells with humor and wit!</p>
-            <img src="https://media.giphy.com/media/3o7TKU8RvQuomFfUUU/giphy.gif" alt="Funny About Us" class="funny-graphic">
-        </div>
-        <div id="gallery" class="tab-content">
-            <h2>Gallery</h2>
-            <p>Feast your eyes on our hilarious collection!</p>
-            <img src="https://media.giphy.com/media/l0HlRmL3L1OtKoGe4/giphy.gif" alt="Funny Gallery" class="funny-graphic">
-        </div>
-        <div id="contact" class="tab-content">
-            <h2>Contact Us</h2>
-            <p>We'd love to hear from you! Reach out with your funniest thoughts.</p>
-            <img src="https://media.giphy.com/media/l3vR2MmOggCQ4YOhW/giphy.gif" alt="Funny Contact" class="funny-graphic">
-        </div>
+  </header>
+
+  <main>
+    <section class="about" id="about">
+      <h2>About Me</h2>
+      <p>[Write a brief introduction about yourself and your interests]</p>
+      <a href="https://[your portfolio link]" class="portfolio-link">Portfolio</a>
     </section>
-    <script>
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-                document.querySelectorAll('.tab-content').forEach(content => {
-                    content.classList.remove('active');
-                });
-                document.getElementById(link.getAttribute('data-tab')).classList.add('active');
-            });
-        });
-    </script>
+
+    <section class="projects" id="projects">
+      <h2>Projects</h2>
+      <ul class="project-list">
+        <li>
+          <h3>Project Name</h3>
+          <p>[Project description]</p>
+          <a href="https://[project link]">View Project</a>
+        </li>
+        </ul>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Contact</h2>
+      <p>[Provide preferred contact methods: email, social media links, etc.]</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; [Year] [Your Name]</p>
+  </footer>
+
 </body>
 </html>
