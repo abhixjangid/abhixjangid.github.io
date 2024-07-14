@@ -45,23 +45,14 @@
       align-items: center;
     }
     .animated-text {
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      height: 40px; /* Adjust the height as needed */
-    }
-    .animated-text img {
-      height: 100%;
-      position: absolute;
-      animation: blink 0.7s step-end infinite;
+      animation: typing 3.5s steps(40, end) infinite, blink 0.7s step-end infinite;
     }
     @keyframes typing {
       from { width: 0; }
       to { width: 100%; }
     }
     @keyframes blink {
-      0%, 100% { opacity: 1; }
+      from, to { opacity: 1; }
       50% { opacity: 0; }
     }
     .nav {
@@ -91,9 +82,7 @@
     <h1 class="heading">
       <span></span>
       <span></span>
-      <span class="animated-text" id="animatedText">
-        <img src="image1.jpg" alt="Image 1">
-      </span>
+      <span class="animated-text"> // neuromancer</span>
     </h1>
     <nav class="nav">
       <ul>
@@ -118,31 +107,19 @@
           <p>[Project description]</p>
           <a href="https://[project link]">View Project</a>
         </li>
-      </ul>
+        </ul>
     </section>
+
     <section class="contact" id="contact">
       <h2>Contact</h2>
       <p>[Provide preferred contact methods: email, social media links, etc.]</p>
-      <p>Email: abhixjangid@gmail.com</p>
-      <p>Twitter: <a href="https://x.com/the_firetorch">https://x.com/the_firetorch</a></p>
+      <p>email: abhixjangid@gmail.com</p>
+      <p><h>twitter: https://x.com/the_firetorch</h></p>
     </section>
   </main>
+
   <footer class="footer">
-    <p>&copy; <span id="year"></span> Abhishek</p>
+    <p>&copy; [Year] [Your Name]</p>
   </footer>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    
-    const images = [
-      'linearMaze.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg', 'image5.jpg',
-      'image6.jpg', 'image7.jpg', 'image8.jpg', 'image9.jpg', 'image10.jpg'
-    ];
-    let currentIndex = 0;
-    const animatedText = document.getElementById('animatedText');
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % images.length;
-      animatedText.innerHTML = `<img src="${images[currentIndex]}" alt="Image ${currentIndex + 1}">`;
-    }, 700); // Change interval to match the blink animation
-  </script>
 </body>
 </html>
