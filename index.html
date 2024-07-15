@@ -1,8 +1,3 @@
-To achieve a retro anime-styled aesthetic with colorful graphics similar to a Spotify page, you can add background images, gradients, and vibrant colors to your website. Here's how you can update your existing HTML and CSS to incorporate these elements:
-
-### Updated HTML and CSS:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,25 +7,42 @@ To achieve a retro anime-styled aesthetic with colorful graphics similar to a Sp
   <style>
     /* Global styles */
     body {
-      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-      color: #fff;
+      background-color: #222;
+      color: #ddd;
       font-family: 'Fira Mono', monospace;
       margin: 0;
       padding: 0;
-      background-size: cover;
-      background-attachment: fixed;
+      overflow-x: hidden;
     }
     a {
-      color: #ff6f61;
+      color: #888;
       text-decoration: none;
+      position: relative;
     }
-    a:hover {
-      color: #ffeb3b;
+    a::before, a::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background: #888;
+      left: 0;
+      transition: transform 0.3s ease;
+    }
+    a::before {
+      top: 0;
+      transform: scaleX(0);
+    }
+    a::after {
+      bottom: 0;
+      transform: scaleX(0);
+    }
+    a:hover::before, a:hover::after {
+      transform: scaleX(1);
     }
     h1, h2 {
       font-weight: 700;
       margin-bottom: 1rem;
-      color: #ffeb3b;
+      position: relative;
     }
     p {
       line-height: 1.5;
@@ -46,18 +58,35 @@ To achieve a retro anime-styled aesthetic with colorful graphics similar to a Sp
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      background-color: rgba(51, 51, 51, 0.8);
-      border-bottom: 2px solid #ff6f61;
+      background-color: #333;
+      border-bottom: 2px solid #444;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+      animation: header-glitch 3s infinite;
+      z-index: 1;
     }
     .heading {
       display: flex;
       align-items: center;
+      z-index: 2;
+      position: relative;
     }
     .animated-text {
-      animation: typing 3.5s steps(40, end) infinite, blink 0.7s step-end infinite;
+      animation: typing 3.5s steps(40, end) infinite, blink 0.7s step-end infinite, glitch 1s infinite;
       white-space: nowrap;
       overflow: hidden;
-      border-right: 2px solid #ffeb3b;
+      border-right: 2px solid #888;
+      position: relative;
+      color: #888;
     }
     @keyframes typing {
       from { width: 0; }
@@ -67,10 +96,28 @@ To achieve a retro anime-styled aesthetic with colorful graphics similar to a Sp
       from, to { opacity: 1; }
       50% { opacity: 0; }
     }
+    @keyframes header-glitch {
+      0% { transform: translateY(0); }
+      20% { transform: translateY(-5px); }
+      40% { transform: translateY(5px); }
+      60% { transform: translateY(-3px); }
+      80% { transform: translateY(3px); }
+      100% { transform: translateY(0); }
+    }
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, -2px); }
+      40% { transform: translate(2px, 2px); }
+      60% { transform: translate(-2px, 2px); }
+      80% { transform: translate(2px, -2px); }
+      100% { transform: translate(0); }
+    }
     .nav {
       list-style: none;
       padding: 0;
       margin: 0;
+      z-index: 2;
+      position: relative;
     }
     .nav li {
       display: inline-block;
@@ -79,9 +126,29 @@ To achieve a retro anime-styled aesthetic with colorful graphics similar to a Sp
     /* Main content styles */
     .about, .projects, .contact {
       margin-bottom: 3rem;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(51, 51, 51, 0.8);
       padding: 1rem;
       border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+    .about::before, .projects::before, .contact::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+      animation: section-glitch 3s infinite;
+    }
+    @keyframes section-glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, -2px); }
+      40% { transform: translate(2px, 2px); }
+      60% { transform: translate(-2px, 2px); }
+      80% { transform: translate(2px, -2px); }
+      100% { transform: translate(0); }
     }
     .project-list {
       list-style: none;
@@ -92,8 +159,29 @@ To achieve a retro anime-styled aesthetic with colorful graphics similar to a Sp
     .footer {
       text-align: center;
       padding: 1rem 0;
-      background-color: rgba(51, 51, 51, 0.8);
-      border-top: 2px solid #ff6f61;
+      background-color: #333;
+      border-top: 2px solid #444;
+      position: relative;
+      overflow: hidden;
+    }
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+      animation: footer-glitch 3s infinite;
+      z-index: 1;
+    }
+    @keyframes footer-glitch {
+      0% { transform: translateY(0); }
+      20% { transform: translateY(-5px); }
+      40% { transform: translateY(5px); }
+      60% { transform: translateY(-3px); }
+      80% { transform: translateY(3px); }
+      100% { transform: translateY(0); }
     }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -145,14 +233,3 @@ To achieve a retro anime-styled aesthetic with colorful graphics similar to a Sp
   </footer>
 </body>
 </html>
-```
-
-### Explanation:
-
-1. **Background Gradient**: Applied a linear gradient background to the `body` to create a colorful, vibrant look.
-2. **Header and Footer**: Added semi-transparent backgrounds and colorful borders to the header and footer for a more dynamic appearance.
-3. **Animated Text**: Enhanced the animated text with a border-right effect and a color that matches the retro aesthetic.
-4. **Sections**: Added semi-transparent backgrounds and padding to the main content sections for better readability and visual appeal.
-5. **Links**: Used vibrant colors for the links to make them stand out.
-
-You can further customize the colors, backgrounds, and images to match the exact retro anime style you desire. Adding background images with anime themes can enhance the aesthetic even more.
