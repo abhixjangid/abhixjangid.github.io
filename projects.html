@@ -222,7 +222,7 @@
 <body>
   <header class="header">
     <h1 class="heading">
-      <i class="fas fa-brain icon-container"></i>
+      <i class="fas icon-container" id="animated-icon"></i>
       <span class="animated-text"> // neuromancer</span>
     </h1>
     <nav class="nav">
@@ -258,5 +258,16 @@
   <footer class="footer">
     <p>&copy; 2024 Abhishek</p>
   </footer>
+  <script>
+    const icon = document.getElementById('animated-icon');
+    const icons = ['fa-brain', 'fa-code', 'fa-robot'];
+    let currentIconIndex = 0;
+
+    setInterval(() => {
+      icon.classList.remove(icons[currentIconIndex]);
+      currentIconIndex = (currentIconIndex + 1) % icons.length;
+      icon.classList.add(icons[currentIconIndex]);
+    }, 1000);
+  </script>
 </body>
 </html>
