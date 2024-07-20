@@ -203,6 +203,15 @@
       60% { transform: translateY(-3px); }
       80% { transform: translateY(3px); }
       100% { transform: translateY(0); }
+
+    .neuromancer-link {
+      text-decoration: none;
+      color: inherit;
+    }
+    .neuromancer-link::before,
+    .neuromancer-link::after {
+      display: none;
+    }
     }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -213,7 +222,7 @@
 <body>
   <header class="header">
     <h1 class="heading">
-      <a href="index.html" style="color: inherit; text-decoration: none;">
+      <a href="index.html" style="color: inherit; text-decoration: none;" class="neuromancer-link">
       <i class="fas fa-brain icon-container"></i>
       <span class="animated-text"> // neuromancer</span>
       </a>
