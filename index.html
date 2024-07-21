@@ -100,6 +100,16 @@
       position: relative;
       color: #888;
     }
+     @media (max-width: 768px) {
+      .animated-text {
+        font-size: 1rem;
+      }
+    }
+    @media (min-width: 769px) {
+      .animated-text {
+        font-size: 1.5rem;
+      }
+    }
     .separator {
   text-align: center;
   font-size: 2rem;
@@ -163,6 +173,38 @@
     .nav li {
       display: inline-block;
       margin-right: 1rem;
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      z-index: 3;
+      position: relative;
+    }
+    .nav-toggle span {
+      width: 25px;
+      height: 3px;
+      background: #888;
+      margin: 4px 0;
+    }
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+      }
+      .nav li {
+        margin: 0;
+        border-bottom: 1px solid #444;
+      }
+      .nav-toggle {
+        display: flex;
+      }
+      .nav.active {
+        display: flex;
+      }
     }
     /* Main content styles */
     .about, .projects, .contact {
@@ -236,8 +278,13 @@
       <i class="fas fa-brain icon-container"></i>
       <span class="animated-text"> // neuromancer</span>
     </h1>
-    <nav class="nav">
-      <ul>
+    <nav>
+      <div class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav">
         <li><a href="#about" color="784">About</a></li>
         <li><a href="projects.html" color = "732">Projects</a></li>
         <li><a href="#contact" color="524">Contact</a></li>
