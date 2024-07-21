@@ -355,6 +355,12 @@
       currentIconIndex = (currentIconIndex + 1) % icons.length;
       icon.classList.add(icons[currentIconIndex]);
     }, 1000);
+     const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
   </script>
 </body>
 </html>
