@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fun Stuff - Abhishek's GitHub Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      background-color: #222;
+      color: #ddd;
+      font-family: 'Fira Mono', monospace;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #333;
+      border-bottom: 2px solid #444;
+    }
+    .heading {
+      display: flex;
+      align-items: center;
+    }
+    .icon-container {
+      margin-right: 10px;
+      font-size: 1.5rem;
+      color: #888;
+    }
+    .animated-text {
+      font-family: 'Press Start 2P', cursive;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #888;
+      color: #888;
+    }
+    @media screen and (max-width: 600px) {
+      .animated-text {
+        font-size: 1rem;
+      }
+    }
+    .nav {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .nav li {
+      display: inline-block;
+      margin-right: 1rem;
+    }
+    .fun-stuff {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: rgba(51, 51, 51, 0.8);
+      border-radius: 10px;
+    }
+    .fun-videos, .uploaded-videos {
+      margin: 1rem 0;
+    }
+    .footer {
+      text-align: center;
+      padding: 1rem 0;
+      background-color: #333;
+      border-top: 2px solid #444;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1 class="heading">
+      <i class="fas fa-brain icon-container"></i>
+      <span class="animated-text"> // neuromancer</span>
+    </h1>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="fun-stuff.html">Fun Stuff</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="fun-stuff">
+      <h2>Fun Stuff</h2>
+      <div class="fun-videos">
+        <!-- Embedded Twitter Video -->
+        <blockquote class="twitter-tweet">
+          <p lang="en" dir="ltr">Check out this amazing video! <a href="https://twitter.com/username/status/1234567890?ref_src=twsrc%5Etfw">March 10, 2024</a></p>&mdash; Username (@username) <a href="https://twitter.com/username/status/1234567890?ref_src=twsrc%5Etfw">March 10, 2024</a>
+        </blockquote>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+      <div class="uploaded-videos">
+        <!-- Uploaded Video -->
+        <video width="320" height="240" controls>
+          <source src="path_to_your_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <!-- Uploaded Image -->
+        <img src="path_to_your_image.jpg" alt="Fun Image" width="320" height="240">
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>&copy; 2024 Abhishek</p>
+  </footer>
+</body>
+</html>
