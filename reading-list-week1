@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reading List 1 (Week 1) - Abhishek's Recommendations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      background-color: #222;
+      color: #ddd;
+      font-family: 'Fira Mono', monospace;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #333;
+      border-bottom: 2px solid #444;
+    }
+    .heading {
+      display: flex;
+      align-items: center;
+    }
+    .icon-container {
+      margin-right: 10px;
+      font-size: 1.5rem;
+      color: #888;
+    }
+    .animated-text {
+      font-family: 'Press Start 2P', cursive;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #888;
+      color: #888;
+    }
+    @media screen and (max-width: 600px) {
+      .animated-text {
+        font-size: 1rem;
+      }
+    }
+    .nav {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .nav li {
+      display: inline-block;
+      margin-right: 1rem;
+    }
+    .reading-list {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: rgba(51, 51, 51, 0.8);
+      border-radius: 10px;
+    }
+    .paper-item {
+      margin: 1rem 0;
+    }
+    .footer {
+      text-align: center;
+      padding: 1rem 0;
+      background-color: #333;
+      border-top: 2px solid #444;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1 class="heading">
+      <i class="fas fa-brain icon-container"></i>
+      <span class="animated-text"> // neuromancer</span>
+    </h1>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="fun-stuff.html">Fun Stuff</a></li>
+        <li><a href="reading-list.html">Reading List</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="reading-list">
+      <h2>Reading List 1 (Week 1)</h2>
+      <div class="paper-item">
+        <h3>Paper Title 1</h3>
+        <p>Author(s): Author Name(s)</p>
+        <p>Journal: Journal Name</p>
+        <p>Year: Year</p>
+        <p><a href="link_to_paper" target="_blank">Read Paper</a></p>
+      </div>
+      <div class="paper-item">
+        <h3>Paper Title 2</h3>
+        <p>Author(s): Author Name(s)</p>
+        <p>Journal: Journal Name</p>
+        <p>Year: Year</p>
+        <p><a href="link_to_paper" target="_blank">Read Paper</a></p>
+      </div>
+      <!-- Add more paper items here as needed -->
+    </section>
+  </main>
+  <footer class="footer">
+    <p>&copy; 2024 Abhishek</p>
+  </footer>
+</body>
+</html>
