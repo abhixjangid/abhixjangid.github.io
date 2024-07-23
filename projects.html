@@ -132,8 +132,45 @@
       position: relative;
     }
     .nav li {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 10px;
       display: inline-block;
       margin-right: 1rem;
+    }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      z-index: 3;
+      position: relative;
+    }
+    .nav-toggle span {
+      width: 25px;
+      height: 3px;
+      background: #888;
+      margin: 4px 0;
+    }
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+      }
+      .nav li {
+        font-family: 'Press Start 2P', cursive;
+        font-size: 10px;
+      white-space: nowrap;
+      overflow: hidden;
+        margin: 0;
+        border-bottom: 1px solid #444;
+      }
+      .nav-toggle {
+        display: flex;
+      }
+      .nav.active {
+        display: flex;
+      }
     }
     /* Main content styles */
     .projects {
@@ -228,7 +265,9 @@
     <nav class="nav">
       <ul>
         <li><a href="index.html" color="784">Home</a></li>
-        <li><a href="projects" color="732">Projects</a></li>
+        <li><a href="#about" color="784">About</a></li>
+        <li><a href="reading-list.html" color = "298">Reading list</a></li>
+        <li><a href="fun-stuff.html" color = "574"> Fun stuff</a></li> 
         <li><a href="#contact" color="524">Contact</a></li>
       </ul>
     </nav>
@@ -268,6 +307,12 @@
       currentIconIndex = (currentIconIndex + 1) % icons.length;
       icon.classList.add(icons[currentIconIndex]);
     }, 1000);
+     const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
   </script>
 </body>
 </html>
