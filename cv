@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhishek Jangid - CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #222;
+      color: #ddd;
+      font-family: 'Press Start 2P', cursive;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #333;
+      border-bottom: 2px solid #444;
+      position: relative;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+      animation: header-glitch 3s infinite;
+      z-index: 1;
+    }
+    .heading {
+      display: flex;
+      align-items: center;
+      z-index: 2;
+      position: relative;
+    }
+    .icon-container {
+      margin-right: 10px;
+      font-size: 1.5rem;
+      color: #888;
+    }
+    .nav {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      z-index: 2;
+      position: relative;
+    }
+    .nav li {
+      font-size: 10px;
+      margin-right: 1rem;
+    }
+    .nav a {
+      color: #888;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .nav a:hover {
+      color: #fff;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #333;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+      animation: section-glitch 3s infinite;
+    }
+    .timeline {
+      position: relative;
+      padding: 2rem;
+    }
+    .timeline-item {
+      position: absolute;
+      padding: 1rem;
+      background: rgba(0, 128, 128, 0.8);
+      color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      transform: translate(-50%, -50%);
+    }
+    .timeline-item:nth-child(1) { top: 10%; left: 10%; }
+    .timeline-item:nth-child(2) { top: 30%; left: 30%; }
+    .timeline-item:nth-child(3) { top: 50%; left: 50%; }
+    .timeline-item:nth-child(4) { top: 70%; left: 70%; }
+    .timeline-item:nth-child(5) { top: 90%; left: 90%; }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin: 2rem 0;
+    }
+    .skill {
+      background: rgba(255, 165, 0, 0.8);
+      color: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      margin: 0.5rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .footer {
+      text-align: center;
+      padding: 1rem 0;
+      background-color: #333;
+      border-top: 2px solid #444;
+      position: relative;
+    }
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+      animation: footer-glitch 3s infinite;
+      z-index: 1;
+    }
+    @keyframes header-glitch {
+      0% { transform: translateY(0); }
+      20% { transform: translateY(-5px); }
+      40% { transform: translateY(5px); }
+      60% { transform: translateY(-3px); }
+      80% { transform: translateY(3px); }
+      100% { transform: translateY(0); }
+    }
+    @keyframes section-glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, -2px); }
+      40% { transform: translate(2px, 2px); }
+      60% { transform: translate(-2px, 2px); }
+      80% { transform: translate(2px, -2px); }
+      100% { transform: translate(0); }
+    }
+    @keyframes footer-glitch {
+      0% { transform: translateY(0); }
+      20% { transform: translateY(-5px); }
+      40% { transform: translateY(5px); }
+      60% { transform: translateY(-3px); }
+      80% { transform: translateY(3px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="heading">
+      <div class="icon-container"></div>
+      <div class="animated-text">Abhishek Jangid - CV</div>
+    </div>
+    <nav>
+      <ul class="nav">
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <section id="timeline" class="timeline">
+      <h2>Timeline</h2>
+      <div class="timeline-item">
+        <h3>2018 - 2023: BS-MS Dual Degree</h3>
+        <p>IISER Kolkata</p>
+      </div>
+      <div class="timeline-item">
+        <h3>2017: XII (Higher Secondary School)</h3>
+        <p>St. Teresa’s Academy, ISC Board</p>
+      </div>
+      <div class="timeline-item">
+        <h3>2015: X (High School)</h3>
+        <p>St. Teresa’s Academy, ICSE Board</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Master’s Thesis</h3>
+        <p>Neural Substrates of Trial-and-Error Motor Learning under Dr. Ashesh Dhawale, Centre for Neuroscience, IISC Bangalore</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Summer Internship (June-August 2021)</h3>
+        <p>Ezrin: Cell Membrane and Actin Cytoskeleton Linker under Dr. Bidisha Sinha, IISER Kolkata</p>
+      </div>
+    </section>
+    <section id="skills" class="skills">
+      <h2>Skills</h2>
+      <div class="skill">Micro-computers and Electronics</div>
+      <div class="skill">Animal Handling and Designing Experiments</div>
+      <div class="skill">Stereotaxic Surgeries and Perfusions</div>
+      <div class="skill">Bioinformatics and Data Science</div>
+      <div class="skill">Machine Learning (Andrew NG Course)</div>
+      <div class="skill">Programming: Python, Java, MATLAB, C++, R</div>
+      <div class="skill">Neural Recording Data and Behaviour Analysis</div>
+      <div class="skill">Photoshop, Video Editing</div>
+      <div class="skill">Web-Designing: HTML, XML, CSS, JavaScript, SQL</div>
+      <div class="skill">Plotting: Origin, GNU Plot</div>
+      <div class="skill">Image Analysis: ImageJ and Fiji</div>
+      <div class="skill">Operating Systems: Windows, Linux, Raspberry Pi OS</div>
+    </section>
+    <section id="achievements" class="achievements">
+      <h2>Achievements</h2>
+      <ul>
+        <li>Merit cum Means Scholarship at IISER Kolkata</li>
+        <li>Poster presentation at No Garland Neuroscience Conference 2023, IISER Pune</li>
+        <li>1st Rank in XII Standard Board Exams</li>
+        <li>Finalist in State Level English Creative Writing in X Standard</li>
+      </ul>
+    </section>
+    <section id="contact" class="contact">
+      <h2>Contact Information</h2>
+      <p>Institute Address: Room No. E-102, ICVS Hostel, IISER Kolkata, Mohanpur – 741246, West-Bengal, India</p>
+      <p>Home Address: Jangid Bhawan, Street 6, Santpura, Govindpuri, Modinagar, Ghaziabad, UP, India</p>
+      <p>Phone: (+91)-9027439550</p>
+      <p>Email: <a href="mailto:aj18ms152@iiserkol.ac.in">aj18ms152@iiserkol.ac.in</a>, <a href="mailto:abhixjangid@gmail.com">abhixjangid@gmail.com</a></p>
+    </section>
+  </div>
+  <footer class="footer">
+    &copy; 2024 Abhishek Jangid
+  </footer>
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
