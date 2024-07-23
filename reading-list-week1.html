@@ -24,36 +24,122 @@
       padding: 1rem 2rem;
       background-color: #333;
       border-bottom: 2px solid #444;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+      animation: header-glitch 3s infinite;
+      z-index: 1;
     }
     .heading {
       display: flex;
       align-items: center;
+      z-index: 2;
+      position: relative;
     }
     .icon-container {
       margin-right: 10px;
       font-size: 1.5rem;
       color: #888;
+      animation: icon-cycle 3s infinite;
     }
     .animated-text {
       font-family: 'Press Start 2P', cursive;
+      animation: blink 1.5s step-end infinite, glitch 1s infinite;
       white-space: nowrap;
       overflow: hidden;
       border-right: 2px solid #888;
+      position: relative;
       color: #888;
     }
-    @media screen and (max-width: 600px) {
+    @media (max-width: 768px) {
       .animated-text {
         font-size: 1rem;
       }
+    }
+    @media (min-width: 769px) {
+      .animated-text {
+        font-size: 1.5rem;
+      }
+    }
+    @keyframes blink {
+      0%, 49% {
+        opacity: 1;
+      }
+      50%, 100% {
+        opacity: 0;
+      }
+    }
+    @keyframes header-glitch {
+      0% { transform: translateY(0); }
+      20% { transform: translateY(-5px); }
+      40% { transform: translateY(5px); }
+      60% { transform: translateY(-3px); }
+      80% { transform: translateY(3px); }
+      100% { transform: translateY(0); }
+    }
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, -2px); }
+      40% { transform: translate(2px, 2px); }
+      60% { transform: translate(-2px, 2px); }
+      80% { transform: translate(2px, -2px); }
+      100% { transform: translate(0); }
     }
     .nav {
       list-style: none;
       padding: 0;
       margin: 0;
+      z-index: 2;
+      position: relative;
     }
     .nav li {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 10px;
       display: inline-block;
       margin-right: 1rem;
+    }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      z-index: 3;
+      position: relative;
+    }
+    .nav-toggle span {
+      width: 25px;
+      height: 3px;
+      background: #888;
+      margin: 4px 0;
+    }
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+      }
+      .nav li {
+        font-family: 'Press Start 2P', cursive;
+        font-size: 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        margin: 0;
+        border-bottom: 1px solid #444;
+      }
+      .nav-toggle {
+        display: flex;
+      }
+      .nav.active {
+        display: flex;
+      }
     }
     .reading-list {
       max-width: 800px;
@@ -62,7 +148,7 @@
       background-color: rgba(51, 51, 51, 0.8);
       border-radius: 10px;
     }
-    .paper-item {
+    .reading-item {
       margin: 1rem 0;
     }
     .footer {
@@ -76,41 +162,58 @@
 <body>
   <header class="header">
     <h1 class="heading">
-      <i class="fas fa-brain icon-container"></i>
+      <i class="fas icon-container" id="animated-icon"></i>
       <span class="animated-text"> // neuromancer</span>
     </h1>
-    <nav class="nav">
-      <ul>
-        <li><a href="index.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="fun-stuff.html">Fun Stuff</a></li>
-        <li><a href="reading-list.html">Reading List</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+    <nav>
+      <div class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav">
+        <li><a href="index.html" color="784">Home</a></li>
+        <li><a href="#about" color="610">About</a></li>
+        <li><a href="projects.html" color="524">Projects</a></li>
+        <li><a href="fun-stuff.html" color="740">Fun Stuff</a></li> 
+        <li><a href="#contact" color="524">Contact</a></li>
       </ul>
     </nav>
   </header>
   <main>
     <section class="reading-list">
       <h2>Reading List 1 (Week 1)</h2>
-      <div class="paper-item">
-        <h3>Paper Title 1</h3>
-        <p>Author(s): Author Name(s)</p>
-        <p>Journal: Journal Name</p>
-        <p>Year: Year</p>
-        <p><a href="link_to_paper" target="_blank">Read Paper</a></p>
+      <div class="reading-item">
+        <h3>Paper 1</h3>
+        <p><a href="https://example.com/paper1">Link to Paper 1</a></p>
       </div>
-      <div class="paper-item">
-        <h3>Paper Title 2</h3>
-        <p>Author(s): Author Name(s)</p>
-        <p>Journal: Journal Name</p>
-        <p>Year: Year</p>
-        <p><a href="link_to_paper" target="_blank">Read Paper</a></p>
+      <div class="reading-item">
+        <h3>Paper 2</h3>
+        <p><a href="https://example.com/paper2">Link to Paper 2</a></p>
       </div>
-      <!-- Add more paper items here as needed -->
+      <!-- Add more papers here as needed -->
     </section>
   </main>
   <footer class="footer">
     <p>&copy; 2024 Abhishek</p>
   </footer>
+  <script>
+    const icon = document.getElementById('animated-icon');
+    const icons = ['fa-brain', 'fa-code', 'fa-robot'];
+    let currentIconIndex = 0;
+
+    setInterval(() => {
+      icon.classList.remove(icons[currentIconIndex]);
+      currentIconIndex = (currentIconIndex + 1) % icons.length;
+      icon.classList.add(icons[currentIconIndex]);
+    }, 1000);
+
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
